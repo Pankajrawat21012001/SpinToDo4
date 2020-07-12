@@ -1,0 +1,403 @@
+#: import C kivy.utils.get_color_from_hex
+#: import Window kivy.core.window
+#:import DropDown kivy.uix.dropdown
+<HomePage>:
+    name:"homepage"
+    id:main
+    orientation:"vertical"
+    image_rotation:image_rotate
+    start_stop:start_stop
+    BoxLayout:
+        size_hint_y:0.1
+        pos_hint:{"top":1}
+        #height:"40dp"
+        spacing:root.width/9
+        padding:20
+        BoxLayout:
+            size_hint_x:0.4
+            orientation:"vertical"
+            ImageButton:
+                padding:[10,0,150,10]
+                id:save
+                size_hint_x:0.8
+                source:"save_white_64.png"
+                allow_stretch:True
+                on_press:root.refresh()
+                on_release: drop.open(self)
+                on_parent: drop.dismiss()
+
+            DropDown:
+                id: drop
+                size_hint_x:0.8
+                spacing:10
+                auto_width:False
+                BoxLayout:
+                    size_hint_y: None
+                    height: root.height/15
+                    Button:
+                        id:save_wheel_1
+                        text: 'No item saved'
+                        size_hint_y: None
+                        size_hint_x: 0.7
+                        height: root.height/15
+                        color:1,1,1,1
+                        background_normal:"middle_black_64.png"
+                        background_down:"boundary_white_64.png"
+                        on_release:root.saving_wheel_1()
+                    Button:
+                        id:delete_1
+                        text: 'Delete'
+                        size_hint_x: 0.3
+                        height: root.height/15
+                        color:1,1,1,1
+                        background_normal:"middle_black_64.png"
+                        background_down:"boundary_white_64.png"
+                        on_release:root.delete_1()
+                BoxLayout:
+                    size_hint_y: None
+                    height: root.height/15
+                    Button:
+                        id:save_wheel_2
+                        text: 'No item saved'
+                        size_hint_y: None
+                        size_hint_x: 0.7
+                        height: root.height/15
+                        color:1,1,1,1
+                        background_normal:"middle_black_64.png"
+                        background_down:"boundary_white_64.png"
+                        on_release:root.saving_wheel_2()
+                    Button:
+                        id:delete_2
+                        text: 'Delete'
+                        size_hint_x: 0.3
+                        height: root.height/15
+                        color:1,1,1,1
+                        background_normal:"middle_black_64.png"
+                        background_down:"boundary_white_64.png"
+                        on_release:root.delete_2()
+                BoxLayout:
+                    size_hint_y: None
+                    height: root.height/15
+                    Button:
+                        id: save_wheel_3
+                        text: 'No item saved'
+                        size_hint_y: None
+                        size_hint_x: 0.7
+                        height: root.height/15
+                        color:1,1,1,1
+                        background_normal:"middle_black_64.png"
+                        background_down:"boundary_white_64.png"
+                        on_release:root.saving_wheel_3()
+                    Button:
+                        id:delete_3
+                        text: 'Delete'
+                        size_hint_x: 0.3
+                        height: root.height/15
+                        color:1,1,1,1
+                        background_normal:"middle_black_64.png"
+                        background_down:"boundary_white_64.png"
+                        on_release:root.delete_3()
+
+
+                Button:
+                    id: save_wheel
+                    text: 'Save'
+                    size_hint_y: None
+                    height: root.height/15
+                    color:1,1,1,1
+                    background_normal:"middle_black_64.png"
+                    background_down:"boundary_white_64.png"
+                    width:root.width/3
+                    on_release:root.save_wheel()
+            Button:
+                id:save_name
+                size_hint_y:0.4
+                text:"Save      "
+                color:1,1,1,1
+                halign:"left"
+                background_color:C("#000000")
+
+        BoxLayout:
+            orientation:"vertical"
+            size_hint_x:0.2
+            BoxLayout:
+                size_hint_y:0.8
+                spacing:0
+                Button:
+                    id:slot_number
+                    text:"3"
+                    color:1,1,1,1
+                    font_size:80                            # for mobile set it as 80
+                    halign:"left"
+                    background_color:C("#000000")
+                    #background_normal:"textInput_image.png"
+                    #background_down:"textInput_image.png"
+                Button:
+                    id:slots
+                    text:"         Slots"
+                    color:1,1,1,1
+                    font_size:80                            # for mobile set it as 80
+                    halign:"right"
+                    background_color:C("#000000")
+                    #background_normal:"textInput_image.png"
+                    #background_down:"textInput_image.png"
+            BoxLayout:
+                size_hint_y:0.2
+        BoxLayout:
+            orientation:"vertical"
+            size_hint_x:0.4
+            padding:10
+            ImageButton:
+                id:reminder
+                size_hint_y:0.7
+                source:"reminder_white_64.png"
+                allow_stretch:True
+                on_release: drop_reminder.open(self)
+                on_parent: drop_reminder.dismiss()
+            DropDown:
+                id: drop_reminder
+                size_hint_x:0.8
+                auto_width:False
+                Button:
+                    id:minute_0_off
+                    text: 'Off'
+                    size_hint_y: None
+                    height: root.height/15
+                    color:1,1,1,1
+                    background_normal:"middle_black_64.png"
+                    background_down:"boundary_white_64.png"
+                    on_release:root.minute_0_off()
+                Button:
+                    id:minute_5
+                    text: '5 minute'
+                    size_hint_y: None
+                    height: root.height/15
+                    color:1,1,1,1
+                    background_normal:"middle_black_64.png"
+                    background_down:"boundary_white_64.png"
+                    on_release:root.minute_5()
+
+                Button:
+                    id:minute_10
+                    text: '10 minute'
+                    size_hint_y: None
+                    height: root.height/15
+                    color:1,1,1,1
+                    background_normal:"middle_black_64.png"
+                    background_down:"boundary_white_64.png"
+                    on_release:root.minute_10()
+
+                Button:
+                    id: minute_15
+                    text: "15 minute"
+                    size_hint_y: None
+                    height: root.height/15
+                    color:1,1,1,1
+                    background_normal:"middle_black_64.png"
+                    background_down:"boundary_white_64.png"
+                    on_release:root.minute_15()
+
+
+                Button:
+                    id:minute_20
+                    text: "20 minute"
+                    size_hint_y: None
+                    height: root.height/15
+                    color:1,1,1,1
+                    background_normal:"middle_black_64.png"
+                    background_down:"boundary_white_64.png"
+                    on_release:root.minute_20()
+
+                Button:
+                    id: minute_30
+                    text: "30 minute"
+                    size_hint_y: None
+                    height: root.height/15
+                    color:1,1,1,1
+                    background_normal:"middle_black_64.png"
+                    background_down:"boundary_white_64.png"
+                    width:root.width/3
+                    on_release:root.minute_30()
+                Button:
+                    id: minute_45
+                    text: "45 minute"
+                    size_hint_y: None
+                    height: root.height/15
+                    color:1,1,1,1
+                    background_normal:"middle_black_64.png"
+                    background_down:"boundary_white_64.png"
+                    width:root.width/3
+                    on_release:root.minute_45()
+                Button:
+                    id: minute_60
+                    text: "60 minute"
+                    size_hint_y: None
+                    height: root.height/15
+                    color:1,1,1,1
+                    background_normal:"middle_black_64.png"
+                    background_down:"boundary_white_64.png"
+                    width:root.width/3
+                    on_release:root.minute_60()
+                Button:
+                    id: minute_90
+                    text: "90 minute"
+                    size_hint_y: None
+                    height: root.height/15
+                    color:1,1,1,1
+                    background_normal:"middle_black_64.png"
+                    background_down:"boundary_white_64.png"
+                    width:root.width/3
+                    on_release:root.minute_90()
+                Button:
+                    id: minute_120
+                    text: "120 minute"
+                    size_hint_y: None
+                    height: root.height/15
+                    color:1,1,1,1
+                    background_normal:"middle_black_64.png"
+                    background_down:"boundary_white_64.png"
+                    width:root.width/3
+                    on_release:root.minute_120()
+
+            Button:
+                id:reminder_name
+                size_hint_y:0.3
+                text:"Reminder"
+                color:1,1,1,1
+                halign:"center"
+                background_color:C("#000000")
+    BoxLayout:
+        size_hint_y:0.05
+        pos_hint:{"top":0.9}
+
+    BoxLayout:
+        size_hint_y:0.04
+        pos_hint:{"top":0.85}
+        ImageButton:
+            id:orientation_of_wheel
+            size_hint_x:0.24
+            source:"orientation_white_64.png"
+            allow_stretch:True
+            on_release:
+                root.animation_correction()
+
+        BoxLayout:
+            size_hint_x:0.48
+
+        ImageButton:
+            size_hint_x:0.28
+            id:day_night
+            source:"moon_white_64.png"
+            allow_stretch:True
+            on_release:
+                root.change_background()
+    BoxLayout:
+        size_hint_y:0.025
+        pos_hint:{"top":0.81}
+        orientation:"horizontal"
+        Button:
+            id:orientation_of_wheel_name
+            size_hint_x:0.28
+            text:"Orienting Wheel"
+            color:1,1,1,1
+            halign:"center"
+            background_color:C("#000000")
+        BoxLayout:
+            size_hint_x:0.44
+        Button:
+            size_hint_x:0.28
+            id:day_night_name
+            text:"Day/Night"
+            color:1,1,1,1
+            halign:"center"
+            background_color:C("#000000")
+
+    BoxLayout:
+        size_hint_y:0.015
+        pos_hint:{"top":0.785}
+        orientation:"horizontal"
+
+    BoxLayout:
+        id:image_rotate
+        size_hint_y:0.62
+        pos_hint:{"top":0.77}
+        BoxLayout:
+            id:image_window
+            padding:[(root.width-1000)/2,(self.height-1000)/2,(root.width-1000)/2,(self.height-1000)/2]
+            canvas.before:
+                Color:
+                    rgb:[0,0,0]
+                PushMatrix
+                Rotate:
+                    angle: root.angle
+                    axis: 0, 0, 1
+                    origin:self.center
+            canvas.after:
+                PopMatrix
+            Image:
+                id:wheel_number
+                source:"wheel3.png"
+                #padding:[(root.width-1000)/2,(self.height-1000)/2,(root.width-1000)/2,(self.height-1000)/2]
+                size_hint:(None,None)
+                size:1000,1000
+                allow_stretch:True
+                center:self.center
+    BoxLayout:
+        id:sub_add
+        size_hint_y:0.05
+        pos_hint:{"top":0.15}
+        padding:[5,10,5,10]
+        spacing:root.width/10
+        Button:
+            id:sub_image
+            size_hint_x:0.20
+            text:"[size=250]-[/size]"
+            color:1,1,1,1
+            background_color:C("#000000")
+            halign:"center"
+            markup:True
+            on_press:root.sub()
+        BoxLayout:
+            id:between_add_sub
+            size_hint_x:0.6
+        Button:
+            id:add_image
+            size_hint_x:0.20
+            text:"[size=160]+[/size]"
+            color:1,1,1,1
+            background_color:C("#000000")
+            halign:"center"
+            markup:True
+            on_press:root.add()
+    BoxLayout:
+        size_hint_y:0.08
+        pos_hint:{"top":0.10}
+
+        BoxLayout:
+            orientation:"horizontal"
+            spacing:root.width/10
+            padding:[root.width/5,10,10,10]
+            Button:
+                id:start_stop
+                background_normal:"blue_circle_64.png"
+                background_down:"blue_circle_64.png"
+                border:30,30,30,30
+                text:"[size=60]Start[/size]"
+                markup:True
+                size_hint:None,None
+                width:root.width/4          # set it for mobile as 400
+                height:root.height/16         # set it fro mobile as 150
+                on_press:root.start()
+            Button:
+                id:clear
+                background_normal:"red_circle_64.png"
+                background_down:"dark_red_circle_64.png"
+                border:30,30,30,30
+                text:"[size=60]Clear[/size]"
+                markup:True
+                size_hint:None,None
+                width:root.width/4
+                height:root.height/16
+                on_press:root.clear_screen()
+
+
