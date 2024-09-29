@@ -1,9 +1,3 @@
 # SpinToDo4
 
-SORRY Friend i have created a application but the source code was on linux/ubentu and then the motherboard of laptop got burned and rest is history
-
-i dont have code that i can show you.
-But i have app in my mobile.
-If any one who know how can i get the code back please pin me
-
-I will post video if i can
+Unfortunately, I lost the source code for this app when my laptop’s motherboard got fried, and it was on a Linux/Ubuntu machine. However, I still have the APK file on my mobile.
